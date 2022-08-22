@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Section1/>
+    <Introduction/>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import Section1 from "@/components/homepage/Section1.vue";
+import Introduction from "@/components/homepage/Introduction.vue";
 @Options({
   props: {},
   components: {
-    Section1
+    Introduction
   }
 })
 export default class HomeView extends Vue {
