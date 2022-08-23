@@ -95,7 +95,7 @@ export default class Introduction extends Vue {
       }
         .job{
           position: relative;
-          color:#435da5;
+          color:#222;
           font-family: "Quicksand";
           font-size: 1.3em;
           letter-spacing: 0.01rem;
@@ -104,7 +104,7 @@ export default class Introduction extends Vue {
         .welcome_msg{
           position: relative;
           margin-top: 5%;
-          color:#435da5;
+          color:#222;
           font-family: "Quicksand";
           font-size: 1em;
           letter-spacing: 0.01rem;
