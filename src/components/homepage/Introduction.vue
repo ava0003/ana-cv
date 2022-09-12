@@ -88,7 +88,6 @@ export default class Introduction extends Vue {
         .name{
           position: relative;
           color:#435da5;
-          font-family: "Quicksand";
           font-weight: bold;
           font-size: 2em;
           letter-spacing: 0.01rem;
@@ -96,7 +95,6 @@ export default class Introduction extends Vue {
         .job{
           position: relative;
           color:#222;
-          font-family: "Quicksand";
           font-size: 1.3em;
           letter-spacing: 0.01rem;
         }
@@ -105,7 +103,6 @@ export default class Introduction extends Vue {
           position: relative;
           margin-top: 5%;
           color:#222;
-          font-family: "Quicksand";
           font-size: 1em;
           letter-spacing: 0.01rem;
         }
@@ -123,7 +120,6 @@ export default class Introduction extends Vue {
             color: #fff;
             cursor: pointer;
             display: inline-block;
-            font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
             font-size: 0.8em;
             font-weight: 400;
             line-height: 1;

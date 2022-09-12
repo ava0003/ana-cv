@@ -7,9 +7,9 @@
           <div class="left-section">
             <div class="left-section-title">CREATIVITY BLEEDS FROM THE PEN OF INSPIRATION.</div>
             <div class="left-section-description">
-              <p>I am your Brand Consultant having 8+ years of experience in this field provides complete 
-                range of marketing materials and branding solution to any industry as well as corporate 
-                clients maintaining their reputation and increasing the brand awareness using PR & other 
+              <p>I am your Brand Consultant having 8+ years of experience in this field provides complete
+                range of marketing materials and branding solution to any industry as well as corporate
+                clients maintaining their reputation and increasing the brand awareness using PR & other
                 print media & online marketing activities.
               </p>
             </div>
@@ -30,10 +30,14 @@
           </div>
       </div>
       <div class="card-section">
-          <div class="card1">CARD 1</div>
+          <Card title="Graphics Design" description="Develop the Visual Identity of Your Business"/>
+          <Card title="Web Design" description="Connect with your users, not just your business"/>
+          <Card title="Development" description="We develop the visual identity of your business"/>
+          <Card title="Seo Friendly" description="Taking your site at the top of Google's ranking"/>
+          <!-- <div class="card1">CARD 1</div>
           <div class="card2">CARD 2</div>
           <div class="card3">CARD 3</div>
-          <div class="card4">CARD 4</div>
+          <div class="card4">CARD 4</div> -->
       </div>
 
     </div>
@@ -42,10 +46,12 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import ProgressBar from '../widgets/ProgressBar.vue'
+import Card from '../widgets/Card.vue'
 @Options({
   props: {},
   components: {
-    ProgressBar
+    ProgressBar,
+    Card
   }
 })
 export default class AboutMe extends Vue {
@@ -77,7 +83,6 @@ export default class AboutMe extends Vue {
         width: 100%;
         text-align: center;
         color:#222;
-        font-family: "Bradley Hand";
         font-weight: bold;
         font-size: 2em;
         letter-spacing: 0.01rem;
@@ -92,7 +97,6 @@ export default class AboutMe extends Vue {
         flex-basis : 50%;
         display: flex;
         flex-direction: row;
-        row-gap: 10%;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -118,7 +122,6 @@ export default class AboutMe extends Vue {
             width: 100%;
             text-align: left;
             color:#222;
-            font-family: "Bradley Hand";
             font-weight: bold;
             font-size: 1.1em;
             font-weight: 800;
@@ -130,7 +133,6 @@ export default class AboutMe extends Vue {
             width: 100%;
             text-align: left;
             color:rgb(75, 74, 74);
-            font-family: "Bradley Hand";
             font-weight: bold;
             font-size: 0.8 em;
             letter-spacing: 0.01rem;
@@ -140,12 +142,11 @@ export default class AboutMe extends Vue {
             width: 100%;
             text-align: left;
             color:rgb(75, 74, 74);
-            font-family: "Bradley Hand";
             font-size: 0.8 em;
             letter-spacing: 0.01rem;
-            list-style-type: none; 
-            padding: 0; 
-            margin: 0; 
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
 
             .name, .age, .lang, .phone, .email, .address {
               margin-top: 2.5%;
@@ -157,25 +158,22 @@ export default class AboutMe extends Vue {
     .card-section{
         position: relative;
         flex-basis : 40%;
-        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        border: 1px solid black;
-        height: 100% ;
+        justify-content: space-between;
+        flex-wrap: no-wrap;
         padding: 0;
-    //   margin : @spacer;
-        background-color: yellow;
-        color: black;
+        margin : 0;
+        height: 100%;
 
-        .card1, .card2, .card3, .card4{
-            position: relative;
-            border: 1px solid black;
-            flex-basis : 25%;
-            height: 100% ;
-            text-align: center;
-        }
+        // .card1, .card2, .card3, .card4{
+        //     position: relative;
+        //     border: 1px solid black;
+        //     flex-basis : 25%;
+        //     height: 100% ;
+        //     text-align: center;
+        // }
     }
 }
 

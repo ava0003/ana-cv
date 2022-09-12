@@ -1,8 +1,16 @@
 <template>
     <div class="progress-container">
-        <p class="progress-label">{{ item }}</p>
-        <div class="progress-bar">
-            <progress></progress>
+        <div class="progress-label">
+            <div>{{ item }}</div>
+        </div>
+        <div class="progress-bar-container">
+
+            <div
+            :style="`width:${percentageValue}%`"
+            class="progress">
+
+            </div>
+
         </div>
     </div>
 </template>
@@ -12,57 +20,79 @@ import { Options, Vue, } from 'vue-class-component';
 
 @Options({
   props: {
-    item : String,
-    percentage : Number
+    item: String,
+    percentage: {
+        type: Number,
+        default: 0,
+        required: true
+    }
 
   },
   components: {
   }
 })
 export default class ProgressBar extends Vue {
-    item!: string
-    percentage!: number
+    // eslint-disable-next-line
+    [x: string]: any;
+    item!: string;
+    animated = false;
+
+    mounted() {
+        this.animated = true;
+    }
+
+    get percentageValue() {
+        return this.percentage;
+    }
+
 }
 </script>
 
 <style lang="less" scoped>
-    progress {
-        opacity: 0;
+
+    .align-r {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    @keyframes animated{
+        0%   {margin-left: -100%;}
+        100% {margin-left: 0%;}
     }
     .progress-container {
         position: relative;
-        widows: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        width: 100%;
         .progress-label {
             position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 5px;
         }
 
-        .progress-label::after {
-            content: "75 %";
-            position: absolute;
-            top:0;
-            right: 0;
+        .progress-bar-container {
+            position: relative;
+            display: flex;
+            background: #eee;
+            border: 1px solid #435da5;
+            overflow: hidden;
+            width: 100%;
+
+            .progress {
+                position: relative;
+                display: block;
+                background: #435da5;
+                width: 0%;
+                margin-left: 0%;
+                height: 5px;
+                // animation-name: animated;
+                animation: animated 2s ease;
+                // animation-duration: 2s;
+            }
         }
-
-        .progress-bar {
-        position: relative;
-        display: inline-block;
-        background: #eee;
-        border-radius: 6px;
-        overflow: hidden;
-        width: 100%;
-        }
-
-        .progress-bar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 75%;
-        background: rgb(0, 2, 2);
-        }
-
-
     }
 
 
